@@ -47,9 +47,9 @@ import AddUser from "./components/Users/AddUser";
 import React,{useState} from "react";
 import UserList from "./components/Users/UserList";
 function App(){
-  const[userList,setUserList]=useState([]);
+  const[userList,setUserLis]=useState([]);
   const addUserHandler=(uName,uAge)=>{
-    setUserList((prevUserList)=>{
+    setUserLis((prevUserList)=>{
       return [...prevUserList,{name:uName,age:uAge,id:Math.random().toString()}]
     })
   }
