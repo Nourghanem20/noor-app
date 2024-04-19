@@ -11,12 +11,11 @@
 
 import AddUser from "./components/Users/AddUser";
 
-    
-//     const yearlyData = []; 
+//     const yearlyData = [];
 
 //   if(userInput){
-//     let currentSavings = +userInput['current-savings']; 
-//     const yearlyContribution = +userInput['yearly-contribution']; 
+//     let currentSavings = +userInput['current-savings'];
+//     const yearlyContribution = +userInput['yearly-contribution'];
 //     const expectedReturn = +userInput['expected-return'] / 100;
 //     const duration = +userInput['duration'];
 
@@ -30,9 +29,8 @@ import AddUser from "./components/Users/AddUser";
 //         yearlyContribution: yearlyContribution,
 //       });
 //     }
-//   }  
+//   }
 
-   
 // return (
 //   <div>
 //   <Header/>
@@ -44,21 +42,23 @@ import AddUser from "./components/Users/AddUser";
 // }
 
 // export default App;
-import React,{useState} from "react";
+import React, { useState } from "react";
 import UserList from "./components/Users/UserList";
-function App(){
-  const[userList,setUserLis]=useState([]);
-  const addUserHandler=(uName,uAge)=>{
-    setUserLis((prevUserList)=>{
-      return [...prevUserList,{name:uName,age:uAge,id:Math.random().toString()}]
-    })
-  }
-  return(
+function App() {
+  const [userList, setUserLis] = useState([]);
+  const addUserHandler = (uName, uAge) => {
+    setUserLis((prevUserList) => {
+      return [
+        ...prevUserList,
+        { name: uName, age: uAge, id: Math.random().toString() },
+      ];
+    });
+  };
+  return (
     <div>
-      <AddUser addFunction={addUserHandler}/>
-      <UserList users={userList}/>
+      <AddUser addFunction={addUserHandler} />
+      <UserList users={userList} />
     </div>
   );
-
 }
 export default App;
